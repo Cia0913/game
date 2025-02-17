@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>🎖 恭喜通關！</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: 400% 400%;
+            margin: 0;
+            color: #fff;
+            display: grid;
+            grid-gap: 15px;
+            margin: 20px auto; /* 置中 */
+            width: fit-content;
+        }
+        .certificate {
+            background: white;
+            color: black;
+            padding: 50px; /* 減少內邊距 */
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            max-width: 500px; /* 設定最大寬度 */
+            width: auto; /* 自動適應內容 */
+            text-align: center;
+        }
+        
+        .certificate-img {
+            max-width: 400px; /* 設定最大寬度，避免太大 */
+            margin: 0 auto; /* 讓圖片置中 */
+            border-radius: 10px; /* 圓角（可選） */
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-shadow: none; /* 確保標題沒有陰影 */
+        }
+        p {
+            font-size: 1.5rem;
+            text-shadow: none; /* 確保內容沒有陰影 */
+        }
+        #confetti-canvas {
+            position: fixed; /* 固定在畫面上，不影響其他內容 */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none; /* 讓它不影響點擊按鈕 */
+            z-index: 9999; /* 確保禮花在最上層 */
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="certificate">
+        <h1>🎉 恭喜通關！</h1>
+        <p>你已成功完成所有挑戰！</p>
+        
+        <p><img src="images/獎狀.png" class="certificate-img"></p>
+        <button onclick="window.location.href='index.html'">返回首頁</button>
+
+        <script src="confetti.js"></script> <!-- 引入禮花腳本 -->
+
+    </div>
+</body>
+</html>

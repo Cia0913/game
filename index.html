@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記憶翻牌遊戲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>記憶翻牌遊戲</h1>
+    <p>翻開卡片並配對所有相同的圖案！</p><p>點閱數：<span id="viewCount">載入中...</span></p>
+    <script src="viewCount.js"></script>
+
+
+    <!-- 進度條 -->
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div id="levelSelection">
+      <h2>選擇關卡</h2>
+      <button class="level-btn" onclick="startGame(1)">第一關</button>
+      <button class="level-btn" onclick="startGame(2)">第二關</button>
+      <button class="level-btn" onclick="startGame(3)">第三關</button>
+  </div>
+    <div id="gameBoard"></div>
+    <script src="script.js"></script>
+</body>
+</html>
