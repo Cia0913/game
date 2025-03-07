@@ -1,0 +1,139 @@
+/* 通用樣式 */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #c2a282, #F3D6B3);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+}
+
+/* 背景漸變動畫 */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 遊戲標題與描述 */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* 強化字陰影 */
+}
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* 強化字陰影 */
+}
+
+/* 進度條樣式 */
+.progress-bar-container {
+    width: 80%;
+    height: 20px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: #8A8A8A; /* 進度條顏色 */
+    animation: progressBarAnimation 0.5s linear forwards;
+}
+
+/* 遊戲版面 */
+#gameBoard {
+    display: grid;
+    grid-gap: 15px;
+    margin: 20px auto; /* 置中 */
+    width: fit-content;
+}
+
+
+/* 卡片樣式 */
+.card {
+    width: 100px;
+    height: 100px;
+    background: #4E5D6C; /* 自然柔和的青灰色卡牌背景 */
+    color: rgb(148, 148, 148);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    transition: transform 0.6s, box-shadow 0.3s ease;
+    position: relative;
+}
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+.card.flipped {
+    transform: rotateY(180deg);
+}
+.card .card-front, .card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.card .card-front {
+    background: #fff;
+    color: #333;
+    transform: rotateY(180deg);
+}
+.card .card-back {
+    background: #4E5D6C;
+    color: white;
+    font-size: 2.5rem; /* 調整星星大小 */
+}
+
+.card img.card-image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    pointer-events: none;
+}
+.card.matched {
+    visibility: hidden;
+}
+
+/* 重新開始按鈕樣式 */
+button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: #FF9F43;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #FF7F24; /* 鼠標懸停效果 */
+}
+
+button:disabled {
+    background-color: #D1D1D1;
+    cursor: not-allowed;
+}
+
+/* 讓重新開始按鈕居中 */
+button {
+    display: block;
+    margin: 20px auto;
+}
